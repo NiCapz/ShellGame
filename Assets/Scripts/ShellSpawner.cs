@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor.EditorTools;
 using UnityEngine;
 
 public class ShellSpawner : MonoBehaviour
@@ -7,6 +6,7 @@ public class ShellSpawner : MonoBehaviour
 
     [SerializeField] private GameObject shellPrefab;
     List<GameObject> shells = new List<GameObject>();
+    [SerializeField] private float minDistance;
 
     private Vector4 spawnArea;
 
@@ -25,28 +25,54 @@ public class ShellSpawner : MonoBehaviour
         return new Vector4(leftBorder, rightBorder, topBorder, lowerBorder);
     }
 
+
     public void SpawnShells()
     {
         int shellsToSpawn = Random.Range(2, 6);
 
+        Vector3 spawnPosition = new Vector3();
         for (int i = 0; i < shellsToSpawn; i++)
         {
-            var spawnPosition = new Vector3(
-                Random.Range(spawnArea.x, spawnArea.y),
-                Random.Range(spawnArea.z, spawnArea.w),
-                Camera.main.nearClipPlane + 1f);
+            bool spawnPositionFound = true;
+            int attemptCounter = 1;
+            do
+            {
+                Debug.Log($"Attempting to Spawn. Attempt {attemptCounter}");
+                spawnPosition.x = Random.Range(spawnArea.x, spawnArea.y);
+                spawnPosition.y = Random.Range(spawnArea.z, spawnArea.w);
+                spawnPosition.z = Camera.main.nearClipPlane + 1f;
+
+                if (shells.Count > 0)
+                {
+                    foreach (GameObject shell in shells)
+                    {
+                        float distanceToShell = Vector2.Distance(shell.transform.position, spawnPosition);
+                        Debug.Log($"Distance to shell: {distanceToShell}");
+                        if (distanceToShell < minDistance)
+                        {
+                            Debug.Log("Shell was too close, trying again");
+                            spawnPositionFound = false;
+                            attemptCounter++;
+                            break;
+                        }
+                    }
+                }
+            } while (!spawnPositionFound && attemptCounter < 10);
 
             spawnPosition = Camera.main.ScreenToWorldPoint(spawnPosition);
+
             shells.Add(Instantiate(shellPrefab, spawnPosition, Quaternion.identity));
             Debug.Log($"Spawned shell at {spawnPosition}");
+
         }
     }
-    
+
     public void DespawnShells()
     {
-        foreach(GameObject shell in shells)
+        foreach (GameObject shell in shells)
         {
             GameObject.Destroy(shell);
         }
+        shells.Clear();
     }
 }
