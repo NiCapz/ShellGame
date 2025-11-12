@@ -19,8 +19,8 @@ public class ShellSpawner : MonoBehaviour
     {
         float leftBorder = Screen.width / 10;
         float rightBorder = Screen.width - Screen.width / 10;
-        float topBorder = Screen.height / 2;
-        float lowerBorder = Screen.height / 10;
+        float topBorder = Screen.height - Screen.height / 10;
+        float lowerBorder = Screen.height / 2;
 
         return new Vector4(leftBorder, rightBorder, topBorder, lowerBorder);
     }
@@ -28,7 +28,7 @@ public class ShellSpawner : MonoBehaviour
 
     public void SpawnShells()
     {
-        int shellsToSpawn = Random.Range(2, 6);
+        int shellsToSpawn = Random.Range(2, 4);
 
         Vector3 spawnPosition = new Vector3();
         for (int i = 0; i < shellsToSpawn; i++)

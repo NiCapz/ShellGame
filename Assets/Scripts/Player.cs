@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,11 +8,13 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject seaShellPrefab;
     public Vector2 mouseposition;
     [SerializeField] private ShellSpawner shellSpawner;
+    [SerializeField] private Animator topWaveAnimator, bottomWaveAnimator;
+    private String startWaveTrigger = "startWave";
 
     void Start()
     {
         //shellSpawner = GetComponent<ShellSpawner>();
-        seaShell = GameObject.Find("Shell").transform;
+        //seaShell = GameObject.Find("Shell").transform;
     }
 
     void Update()
@@ -26,7 +29,9 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            shellSpawner.SpawnShells();
+            topWaveAnimator.SetTrigger(startWaveTrigger);
+            bottomWaveAnimator.SetTrigger(startWaveTrigger);
+            //shellSpawner.SpawnShells();
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
