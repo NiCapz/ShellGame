@@ -61,8 +61,7 @@ public class ShellSpawner : MonoBehaviour
 
             spawnPosition = Camera.main.ScreenToWorldPoint(spawnPosition);
 
-            Quaternion rotationQuaternion = Quaternion.Euler(new Vector3(0, 0, Random.Range(0, 360)));
-            shells.Add(Instantiate(shellPrefab, spawnPosition, rotationQuaternion));
+            shells.Add(Instantiate(shellPrefab, spawnPosition, Quaternion.identity));
             Debug.Log($"Spawned shell at {spawnPosition}");
 
         }
