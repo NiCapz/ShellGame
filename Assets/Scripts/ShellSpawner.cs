@@ -5,8 +5,8 @@ public class ShellSpawner : MonoBehaviour
 {
 
     [SerializeField] private GameObject shellPrefab;
-    List<GameObject> shells = new List<GameObject>();
     [SerializeField] private float minDistance;
+    List<GameObject> shells = new List<GameObject>();
 
     private Vector4 spawnArea;
 
