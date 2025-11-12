@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 2933826420267541215}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.033, y: -0.021, z: 0}
-  m_LocalScale: {x: 1.2042, y: 1.1176, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6881125870285114324}
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 9182157284707403512, guid: caafc94c810f0f94582573cb031220de, type: 3}
-  m_Color: {r: 0.9443335, g: 1, b: 0.21226418, a: 1}
+  m_Sprite: {fileID: 600705251289075337, guid: 6f32a8042d5f6ea40b516e8006c6de40, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 6881125870285114324}
   - component: {fileID: 4394529532883991243}
   - component: {fileID: 3664002691779625022}
-  - component: {fileID: 3342052916920476379}
+  - component: {fileID: 551492585700128475}
   m_Layer: 0
   m_Name: Shell
   m_TagString: Untagged
@@ -118,8 +118,8 @@ Transform:
   m_GameObject: {fileID: 5765633684742688154}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09582, y: -0.22405, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2368862720673617458}
@@ -172,7 +172,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 9182157284707403512, guid: caafc94c810f0f94582573cb031220de, type: 3}
+  m_Sprite: {fileID: 3568003546322611284, guid: ce847adc3ae05954785f9aa5f64455bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shell
   outline: {fileID: 7751189093490844638}
---- !u!60 &3342052916920476379
+--- !u!60 &551492585700128475
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,7 +234,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.37, y: 1.67}
+    oldSize: {x: 0.6, y: 0.57}
     newSize: {x: 1.37, y: 1.67}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -242,15 +242,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.45499998, y: -0.765}
-      - {x: 0.685, y: -0.074999996}
-      - {x: 0.685, y: 0.805}
-      - {x: 0.645, y: 0.835}
-      - {x: -0.005, y: 0.835}
-      - {x: -0.645, y: 0.405}
-      - {x: -0.685, y: 0.175}
-      - {x: -0.685, y: -0.685}
-      - {x: -0.555, y: -0.805}
-      - {x: -0.515, y: -0.835}
-      - {x: 0.185, y: -0.835}
+    - - {x: 0.29999998, y: -0.175}
+      - {x: 0.29999998, y: 0.125}
+      - {x: 0.24, y: 0.225}
+      - {x: 0.12, y: 0.285}
+      - {x: -0.14999999, y: 0.285}
+      - {x: -0.29999998, y: 0.145}
+      - {x: -0.29999998, y: -0.175}
+      - {x: -0.17, y: -0.285}
+      - {x: 0.17999999, y: -0.285}
   m_UseDelaunayMesh: 0
