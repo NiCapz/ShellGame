@@ -38,7 +38,6 @@ public class ShellSpawner : MonoBehaviour
             int attemptCounter = 1;
             do
             {
-                Debug.Log($"Attempting to Spawn. Attempt {attemptCounter}");
                 spawnPosition.x = Random.Range(spawnArea.x, spawnArea.y);
                 spawnPosition.y = Random.Range(spawnArea.z, spawnArea.w);
                 spawnPosition.z = Camera.main.nearClipPlane + 1f;
@@ -48,10 +47,8 @@ public class ShellSpawner : MonoBehaviour
                     foreach (GameObject shell in shells)
                     {
                         float distanceToShell = Vector2.Distance(shell.transform.position, spawnPosition);
-                        Debug.Log($"Distance to shell: {distanceToShell}");
                         if (distanceToShell < minDistance)
                         {
-                            Debug.Log("Shell was too close, trying again");
                             spawnPositionFound = false;
                             attemptCounter++;
                             break;
@@ -66,7 +63,6 @@ public class ShellSpawner : MonoBehaviour
             spawnPosition = Camera.main.ScreenToWorldPoint(spawnPosition);
 
             shells.Add(Instantiate(shellPrefab, spawnPosition, Quaternion.identity));
-            Debug.Log($"Spawned shell at {spawnPosition}");
 
         }
     }

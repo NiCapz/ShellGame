@@ -7,7 +7,7 @@ public class Shell : MonoBehaviour, IClickable
         Scallop = 0,
         Iridescent= 1
     }
-    private static ShellType[] drawTable = { ShellType.Scallop, ShellType.Scallop, ShellType.Iridescent };
+    private static ShellType[] drawTable = { ShellType.Scallop, ShellType.Iridescent };
 
     [SerializeField] SpriteRenderer outline;
 
@@ -18,7 +18,10 @@ public class Shell : MonoBehaviour, IClickable
     {
         assetProvider = GameObject.FindAnyObjectByType<AssetProvider>();
 
-        shellType = drawTable[Random.Range(0, drawTable.Length - 1)];
+        int random = Random.Range(0, 2);
+        shellType = drawTable[random];
+        Debug.Log(random);
+
 
         int spriteIndex = (int) shellType;
         Sprite sprite = assetProvider.shellSprites[spriteIndex];
@@ -31,7 +34,6 @@ public class Shell : MonoBehaviour, IClickable
 
     void OnMouseEnter()
     {
-        Debug.Log("shell entered");
         outline.enabled = true;
         Player.AddToClickables(gameObject);
     }
@@ -39,7 +41,6 @@ public class Shell : MonoBehaviour, IClickable
     void OnMouseExit()
     {
         outline.enabled = false;
-        Debug.Log("Shell exited");
         Player.RemoveFromClickables(gameObject);
     }
 
