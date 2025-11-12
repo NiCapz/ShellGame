@@ -119,6 +119,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &65112940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 65112942}
+  - component: {fileID: 65112941}
+  m_Layer: 0
+  m_Name: AssetProvider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &65112941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65112940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea25def2c81e9124799c54b470726029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AssetProvider
+  shellSprites:
+  - {fileID: 3568003546322611284, guid: ce847adc3ae05954785f9aa5f64455bf, type: 3}
+  - {fileID: 9182157284707403512, guid: caafc94c810f0f94582573cb031220de, type: 3}
+  shellSpritesOutline:
+  - {fileID: 600705251289075337, guid: 6f32a8042d5f6ea40b516e8006c6de40, type: 3}
+  - {fileID: 9182157284707403512, guid: caafc94c810f0f94582573cb031220de, type: 3}
+--- !u!4 &65112942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65112940}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.52286, y: -1.55893, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &340859037
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,10 +199,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   seaShellPrefab: {fileID: 5765633684742688154, guid: 90687061f47b16e4a9975773aff06c50, type: 3}
-  mouseposition: {x: 0, y: 0}
   shellSpawner: {fileID: 1869200903}
   topWaveAnimator: {fileID: 1182823281}
   bottomWaveAnimator: {fileID: 1797768827}
+  mouseposition: {x: 0, y: 0}
 --- !u!4 &340859039
 Transform:
   m_ObjectHideFlags: 0
@@ -839,7 +889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShellSpawner
   shellPrefab: {fileID: 5765633684742688154, guid: 90687061f47b16e4a9975773aff06c50, type: 3}
-  minDistance: 750
+  minDistance: 2000
 --- !u!4 &1869200904
 Transform:
   m_ObjectHideFlags: 0
@@ -867,3 +917,4 @@ SceneRoots:
   - {fileID: 1458493951}
   - {fileID: 1797768826}
   - {fileID: 1182823283}
+  - {fileID: 65112942}

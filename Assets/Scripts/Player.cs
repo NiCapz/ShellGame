@@ -17,10 +17,6 @@ public class Player : MonoBehaviour
     public static void AddToClickables(GameObject clickable)
     {
         clickables.Add(clickable);
-        foreach (GameObject thingy in clickables)
-        {
-            Debug.Log($"{thingy} is clicakble");
-        }
     }
 
     public static void RemoveFromClickables(GameObject unclickable)
