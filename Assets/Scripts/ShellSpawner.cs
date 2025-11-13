@@ -9,14 +9,14 @@ public class ShellSpawner : MonoBehaviour
     List<int> unavailableSpawnPoints = new List<int>();
     List<GameObject> shells = new List<GameObject>();
     Transform[] blanketSpawnPoints;
-    HashSet<Shell.ShellType> foundShellTypes;
+    HashSet<Shell.ShellType> foundShellTypes = new HashSet<Shell.ShellType>();
 
     public void SpawnShellOnBlanket(Shell.ShellType type)
     {
         if (!foundShellTypes.Contains(type))
         {
             foundShellTypes.Add(type);
-            Instantiate(shellPrefab, blanketSpawnPoints[(int) type].position, Quaternion.identity);
+            Instantiate(shellPrefab, blanketSpawnPoints[(int)type].position, Quaternion.identity);
         }
     }
 
@@ -38,7 +38,11 @@ public class ShellSpawner : MonoBehaviour
             do
             {
                 spawnPointIndex = Random.Range(0, spawnPoints.Count);
-                if (!unavailableSpawnPoints.Contains(spawnPointIndex)) spawnPointFound = true;
+                if (!unavailableSpawnPoints.Contains(spawnPointIndex))
+                {
+                    spawnPointFound = true;
+                    unavailableSpawnPoints.Add(spawnPointIndex);
+                }
             } while (!spawnPointFound);
             spawnPosition = spawnPoints[spawnPointIndex].position;
             spawnPosition.z = Camera.main.nearClipPlane + 1f;

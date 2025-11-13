@@ -16,10 +16,12 @@ public class Shell : MonoBehaviour, IClickable
 
     private ShellType shellType;
     private AssetProvider assetProvider;
+    private ShellSpawner shellSpawner;
 
     void Start()
     {
         assetProvider = FindAnyObjectByType<AssetProvider>();
+        shellSpawner = FindAnyObjectByType<ShellSpawner>();
 
         int random = Random.Range(0, 3);
         shellType = drawTable[random];
@@ -49,5 +51,6 @@ public class Shell : MonoBehaviour, IClickable
     {
         Player.RemoveFromClickables(gameObject);
         Destroy(gameObject);
+        shellSpawner.SpawnShellOnBlanket(shellType);
     }
 }
