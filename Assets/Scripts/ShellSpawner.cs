@@ -20,7 +20,6 @@ public class ShellSpawner : MonoBehaviour
             Vector3 spawnPosition = blanketSpawnPoints[spawnPointIndex].position;
             spawnPosition.z = Camera.main.nearClipPlane + 1f;
 
-            Debug.Log($"Blanket Spawnindex: {spawnPointIndex}\nAt position {spawnPosition}");
             Shell shell = Instantiate(shellPrefab, spawnPosition, Quaternion.identity).GetComponent<Shell>();
             shell.SetSpecificType(type);
             shell.SetSprite();

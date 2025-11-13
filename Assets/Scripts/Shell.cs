@@ -8,18 +8,19 @@ public class Shell : MonoBehaviour, IClickable
     public enum ShellType
     {
         Scallop = 0,
-        Cowrie  = 1,
-        Murex   = 2,
+        Cowrie = 1,
+        Murex = 2,
     }
 
     private static ShellType[] drawTable = { ShellType.Scallop, ShellType.Cowrie, ShellType.Murex };
-    
+
 
     [SerializeField] SpriteRenderer outline;
 
     private ShellType shellType;
     private AssetProvider assetProvider;
     private ShellSpawner shellSpawner;
+    private bool clickable = true;
 
     void Awake()
     {
@@ -33,8 +34,8 @@ public class Shell : MonoBehaviour, IClickable
     public void SetSpecificType(ShellType type)
     {
         shellType = type;
-        transform.localScale = new Vector3(2f, 2f, 2f);
-        
+        transform.localScale = new Vector3(3f, 3f, 3f);
+        clickable = false;
     }
 
     public void SetRandomType()
@@ -45,7 +46,7 @@ public class Shell : MonoBehaviour, IClickable
 
     public void SetSprite()
     {
-        int spriteIndex = (int) shellType;
+        int spriteIndex = (int)shellType;
         Debug.Log(assetProvider.enabled);
         Sprite sprite = assetProvider.shellSprites[spriteIndex];
         Sprite outlineSprite = assetProvider.shellSpritesOutline[spriteIndex];
@@ -69,8 +70,11 @@ public class Shell : MonoBehaviour, IClickable
 
     public void ClickOn()
     {
-        Player.RemoveFromClickables(gameObject);
-        shellSpawner.SpawnShellOnBlanket(shellType);
-        Destroy(gameObject);
+        if (clickable)
+        {
+            Player.RemoveFromClickables(gameObject);
+            shellSpawner.SpawnShellOnBlanket(shellType);
+            Destroy(gameObject);
+        }
     }
 }
