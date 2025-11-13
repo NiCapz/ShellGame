@@ -44,7 +44,6 @@ public class Player : MonoBehaviour
 
         Vector2 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        //Debug.Log(worldMousePos);
         mouseposition = worldMousePos;
 
         if (Input.GetKeyDown(KeyCode.Mouse0))

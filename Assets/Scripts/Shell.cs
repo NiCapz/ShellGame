@@ -20,8 +20,6 @@ public class Shell : MonoBehaviour, IClickable
 
         int random = Random.Range(0, 2);
         shellType = drawTable[random];
-        Debug.Log(random);
-
 
         int spriteIndex = (int) shellType;
         Sprite sprite = assetProvider.shellSprites[spriteIndex];
