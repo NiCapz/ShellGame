@@ -5,7 +5,7 @@ public class ShellSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject shellPrefab;
     [SerializeField] private float minDistance;
-    [SerializeField] List<Transform> spawnPoints = new List<Transform>();
+    Transform[] spawnPoints;
     List<int> unavailableSpawnPoints = new List<int>();
     List<GameObject> shells = new List<GameObject>();
     Transform[] blanketSpawnPoints;
@@ -16,12 +16,15 @@ public class ShellSpawner : MonoBehaviour
         if (!foundShellTypes.Contains(type))
         {
             foundShellTypes.Add(type);
-            Instantiate(shellPrefab, blanketSpawnPoints[(int)type].position, Quaternion.identity);
+            Shell shell = Instantiate(shellPrefab, blanketSpawnPoints[(int)type].position, Quaternion.identity).GetComponent<Shell>();
+            shell.SetSpecificType(type);
+            shell.SetSprite();
         }
     }
 
     void Awake()
     {
+        spawnPoints = GameObject.Find("ShellSpawnPoints").GetComponentsInChildren<Transform>();
         blanketSpawnPoints = GameObject.Find("BlanketShellLocations").GetComponentsInChildren<Transform>();
     }
 
@@ -37,7 +40,7 @@ public class ShellSpawner : MonoBehaviour
             bool spawnPointFound = false;
             do
             {
-                spawnPointIndex = Random.Range(0, spawnPoints.Count);
+                spawnPointIndex = Random.Range(0, spawnPoints.Length);
                 if (!unavailableSpawnPoints.Contains(spawnPointIndex))
                 {
                     spawnPointFound = true;

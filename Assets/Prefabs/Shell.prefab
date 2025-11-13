@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shell
   outline: {fileID: 7751189093490844638}
+  assetProvider: {fileID: 0}
 --- !u!60 &551492585700128475
 PolygonCollider2D:
   m_ObjectHideFlags: 0
