@@ -8,12 +8,13 @@ public class Player : MonoBehaviour
 
     [SerializeField] private GameObject seaShellPrefab;
     [SerializeField] private ShellSpawner shellSpawner;
-    [SerializeField] private Animator topWaveAnimator, bottomWaveAnimator, cameraAnimator;
+    [SerializeField] private Animator topWaveAnimator, bottomWaveAnimator;//, cameraAnimator;
+    [SerializeField] private CameraAnimation cameraAnimation;
 
-    private bool showBlanket = false;
+    private bool atBeach = true;
     public Vector2 mouseposition;
     private string startWaveTrigger = "startWave";
-    private string toggleBlanketTrigger = "toggleBlanket";
+    //private string toggleBlanketTrigger = "toggleBlanket";
     private static List<GameObject> clickables = new List<GameObject>();
 
     public static void AddToClickables(GameObject clickable)
@@ -65,8 +66,15 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            showBlanket = !showBlanket;
-            cameraAnimator.SetTrigger(toggleBlanketTrigger);
+            if (atBeach)
+            {
+                cameraAnimation.EaseUp();
+            } else
+            {
+                cameraAnimation.EaseDown();
+            }
+            atBeach = !atBeach;
+            //cameraAnimator.SetTrigger(toggleBlanketTrigger);
         }
     }
 }
