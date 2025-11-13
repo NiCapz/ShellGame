@@ -16,7 +16,12 @@ public class ShellSpawner : MonoBehaviour
         if (!foundShellTypes.Contains(type))
         {
             foundShellTypes.Add(type);
-            Shell shell = Instantiate(shellPrefab, blanketSpawnPoints[(int)type].position, Quaternion.identity).GetComponent<Shell>();
+            int spawnPointIndex = (int)type + 1;
+            Vector3 spawnPosition = blanketSpawnPoints[spawnPointIndex].position;
+            spawnPosition.z = Camera.main.nearClipPlane + 1f;
+
+            Debug.Log($"Blanket Spawnindex: {spawnPointIndex}\nAt position {spawnPosition}");
+            Shell shell = Instantiate(shellPrefab, spawnPosition, Quaternion.identity).GetComponent<Shell>();
             shell.SetSpecificType(type);
             shell.SetSprite();
         }

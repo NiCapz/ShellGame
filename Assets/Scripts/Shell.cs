@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Shell : MonoBehaviour, IClickable
 {
@@ -32,6 +33,8 @@ public class Shell : MonoBehaviour, IClickable
     public void SetSpecificType(ShellType type)
     {
         shellType = type;
+        transform.localScale = new Vector3(2f, 2f, 2f);
+        
     }
 
     public void SetRandomType()
