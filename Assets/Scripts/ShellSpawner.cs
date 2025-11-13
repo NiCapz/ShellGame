@@ -23,6 +23,9 @@ public class ShellSpawner : MonoBehaviour
             Shell shell = Instantiate(shellPrefab, spawnPosition, Quaternion.identity).GetComponent<Shell>();
             shell.SetSpecificType(type);
             shell.SetSprite();
+            
+            Destroy(shell.GetComponent<PolygonCollider2D>());
+            gameObject.AddComponent<PolygonCollider2D>();
         }
     }
 
