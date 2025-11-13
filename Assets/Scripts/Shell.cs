@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Shell : MonoBehaviour, IClickable
@@ -5,9 +6,11 @@ public class Shell : MonoBehaviour, IClickable
     public enum ShellType
     {
         Scallop = 0,
-        Iridescent= 1
+        Cowrie  = 1,
+        Murex   = 2,
     }
-    private static ShellType[] drawTable = { ShellType.Scallop, ShellType.Iridescent };
+    private static ShellType[] drawTable = { ShellType.Scallop, ShellType.Cowrie, ShellType.Murex };
+    
 
     [SerializeField] SpriteRenderer outline;
 
@@ -16,9 +19,9 @@ public class Shell : MonoBehaviour, IClickable
 
     void Start()
     {
-        assetProvider = GameObject.FindAnyObjectByType<AssetProvider>();
+        assetProvider = FindAnyObjectByType<AssetProvider>();
 
-        int random = Random.Range(0, 2);
+        int random = Random.Range(0, 3);
         shellType = drawTable[random];
 
         int spriteIndex = (int) shellType;

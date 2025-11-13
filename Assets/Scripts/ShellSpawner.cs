@@ -8,6 +8,22 @@ public class ShellSpawner : MonoBehaviour
     [SerializeField] List<Transform> spawnPoints = new List<Transform>();
     List<int> unavailableSpawnPoints = new List<int>();
     List<GameObject> shells = new List<GameObject>();
+    Transform[] blanketSpawnPoints;
+    HashSet<Shell.ShellType> foundShellTypes;
+
+    public void SpawnShellOnBlanket(Shell.ShellType type)
+    {
+        if (!foundShellTypes.Contains(type))
+        {
+            foundShellTypes.Add(type);
+            Instantiate(shellPrefab, blanketSpawnPoints[(int) type].position, Quaternion.identity);
+        }
+    }
+
+    void Awake()
+    {
+        blanketSpawnPoints = GameObject.Find("BlanketShellLocations").GetComponentsInChildren<Transform>();
+    }
 
     public void SpawnShells()
     {
@@ -28,7 +44,6 @@ public class ShellSpawner : MonoBehaviour
             spawnPosition.z = Camera.main.nearClipPlane + 1f;
 
             shells.Add(Instantiate(shellPrefab, spawnPosition, Quaternion.identity));
-
         }
     }
 
@@ -36,7 +51,7 @@ public class ShellSpawner : MonoBehaviour
     {
         foreach (GameObject shell in shells)
         {
-            GameObject.Destroy(shell);
+            Destroy(shell);
         }
         shells.Clear();
     }
