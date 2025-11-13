@@ -6,6 +6,8 @@ public class ShellSpawner : MonoBehaviour
 
     [SerializeField] private GameObject shellPrefab;
     [SerializeField] private float minDistance;
+    [SerializeField] List<Transform> spawnPoints = new List<Transform>();
+    List<int> unavailableSpawnPoints = new List<int>();
     List<GameObject> shells = new List<GameObject>();
 
     private Vector4 spawnArea;
@@ -34,6 +36,7 @@ public class ShellSpawner : MonoBehaviour
         Vector3 spawnPosition = new Vector3();
         for (int i = 0; i < shellsToSpawn; i++)
         {
+            /*
             bool spawnPositionFound = true;
             int attemptCounter = 1;
             do
@@ -52,15 +55,26 @@ public class ShellSpawner : MonoBehaviour
                             spawnPositionFound = false;
                             attemptCounter++;
                             break;
-                        } else
+                        }
+                        else
                         {
                             spawnPositionFound = true;
                         }
                     }
                 }
             } while (!spawnPositionFound && attemptCounter < 20);
+            */
 
-            spawnPosition = Camera.main.ScreenToWorldPoint(spawnPosition);
+            //spawnPosition = Camera.main.ScreenToWorldPoint(spawnPosition);
+            int spawnPointIndex;
+            bool spawnPointFound = false;
+            do
+            {
+                spawnPointIndex = Random.Range(0, spawnPoints.Count);
+                if (!unavailableSpawnPoints.Contains(spawnPointIndex)) spawnPointFound = true;
+            } while (!spawnPointFound);
+            spawnPosition = spawnPoints[spawnPointIndex].position;
+            spawnPosition.z = Camera.main.nearClipPlane + 1f;
 
             shells.Add(Instantiate(shellPrefab, spawnPosition, Quaternion.identity));
 

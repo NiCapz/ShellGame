@@ -116,10 +116,10 @@ TextureImporter:
       name: scallop1border_0
       rect:
         serializedVersion: 2
-        x: 58
-        y: 84
-        width: 64
-        height: 61
+        x: 0
+        y: 0
+        width: 62
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
