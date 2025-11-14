@@ -26,7 +26,7 @@ public class JournalManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && allJournals.activeInHierarchy)
+        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.B)) && allJournals.activeInHierarchy)
         {
             ToggleJournal();
         }
