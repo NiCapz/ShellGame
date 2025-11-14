@@ -17,24 +17,10 @@ public class JournalManager : MonoBehaviour
 
     void Awake()
     {
-        checkMarks = GameObject.FindGameObjectsWithTag("Checkmark")
-                            .OrderBy(go => go.transform.GetSiblingIndex())
-                            .ToArray(); 
         foreach (GameObject checkmark in checkMarks)
         {
             checkmark.SetActive(false);
         }
-
-        var amountsGuisGameObjects = GameObject.FindGameObjectsWithTag("Amount")
-                     .OrderBy(go => go.transform.GetSiblingIndex())
-                     .ToArray();
-        Debug.Log($"checkmars length: {checkMarks.Length}");
-        Debug.Log($"amountsGuisGameObjects length: {amountsGuisGameObjects.Length}");
-        for (int i = 0; i < 9; i++)
-        {
-            amountsGuis[i] = amountsGuisGameObjects[i].GetComponent<TextMeshProUGUI>();
-        }
-        //SwitchTab(Tabs.Shells);
         ToggleJournal();
     }
 
@@ -43,28 +29,6 @@ public class JournalManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && allJournals.activeInHierarchy)
         {
             ToggleJournal();
-        }
-    }
-
-    public void SwitchTab(Tabs tab)
-    {
-        switch (tab)
-        {
-            case Tabs.Diary:
-                journalDiary.SetActive(true);
-                journalShells.SetActive(false);
-                journalOptions.SetActive(false);
-                break;
-            case Tabs.Shells:
-                journalDiary.SetActive(false);
-                journalShells.SetActive(true);
-                journalOptions.SetActive(false);
-                break;
-            case Tabs.Options:
-                journalDiary.SetActive(false);
-                journalShells.SetActive(false);
-                journalOptions.SetActive(true);
-                break;
         }
     }
 

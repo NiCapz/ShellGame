@@ -10,6 +10,8 @@ public class JournalButton : MonoBehaviour, IClickable
     void Awake()
     {
         journalManager = FindAnyObjectByType<JournalManager>();
+        outline.enabled = false;
+
     }
 
     public void ClickOn()

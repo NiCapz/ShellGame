@@ -3164,18 +3164,25 @@ MonoBehaviour:
   journalDiary: {fileID: 1591601160}
   journalShells: {fileID: 847288457}
   checkMarks:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1380764891}
+  - {fileID: 271252739}
+  - {fileID: 1709358134}
+  - {fileID: 43589804}
+  - {fileID: 1217350630}
+  - {fileID: 1274197026}
+  - {fileID: 1113110871}
+  - {fileID: 196464362}
+  - {fileID: 449811159}
   amountsGuis:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1449803498}
+  - {fileID: 1912127404}
+  - {fileID: 978202588}
+  - {fileID: 918884940}
+  - {fileID: 1166970193}
+  - {fileID: 487141529}
+  - {fileID: 671131353}
+  - {fileID: 846212760}
+  - {fileID: 457062583}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
