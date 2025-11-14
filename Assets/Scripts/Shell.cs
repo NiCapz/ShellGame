@@ -8,11 +8,18 @@ public class Shell : MonoBehaviour, IClickable
     public enum ShellType
     {
         Scallop = 0,
-        Cowrie = 1,
-        Murex = 2,
+        Murex   = 1,
+        Cowrie  = 2,
+        Conch   = 3,
+        Nautilus = 4,
+        RazorClam = 5,
+        Starfish = 6,
+        Turret = 7,
+        Periwinkle = 8
     }
 
-    private static ShellType[] drawTable = { ShellType.Scallop, ShellType.Cowrie, ShellType.Murex };
+    private static ShellType[] drawTable = { ShellType.Scallop, ShellType.Murex, ShellType.Cowrie, ShellType.Conch,
+     ShellType.Nautilus, ShellType.RazorClam, ShellType.Starfish, ShellType.Turret, ShellType.Periwinkle };
 
 
     [SerializeField] SpriteRenderer outline;
@@ -25,7 +32,6 @@ public class Shell : MonoBehaviour, IClickable
     void Awake()
     {
         assetProvider = FindAnyObjectByType<AssetProvider>();
-        Debug.Log(assetProvider.enabled);
         shellSpawner = FindAnyObjectByType<ShellSpawner>();
         SetRandomType();
         SetSprite();
@@ -47,7 +53,6 @@ public class Shell : MonoBehaviour, IClickable
     public void SetSprite()
     {
         int spriteIndex = (int)shellType;
-        Debug.Log(assetProvider.enabled);
         Sprite sprite = assetProvider.shellSprites[spriteIndex];
         Sprite outlineSprite = assetProvider.shellSpritesOutline[spriteIndex];
         GetComponent<SpriteRenderer>().sprite = sprite;

@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "ShellGame.sln"
+    "dotnet.defaultSolution": "SheSellsSeaShells.sln"
 }
