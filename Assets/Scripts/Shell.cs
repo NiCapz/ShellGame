@@ -1,21 +1,18 @@
-using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Shell : MonoBehaviour, IClickable
 {
     public enum ShellType
     {
-        Scallop = 0,
-        Murex   = 1,
-        Cowrie  = 2,
-        Conch   = 3,
-        Nautilus = 4,
-        RazorClam = 5,
-        Starfish = 6,
-        Turret = 7,
-        Periwinkle = 8
+        Scallop     = 0,
+        Murex       = 1,
+        Cowrie      = 2,
+        Conch       = 3,
+        Nautilus    = 4,
+        RazorClam   = 5,
+        Starfish    = 6,
+        Turret      = 7,
+        Periwinkle  = 8
     }
 
     private static ShellType[] drawTable = { ShellType.Scallop, ShellType.Murex, ShellType.Cowrie, ShellType.Conch,
@@ -79,6 +76,7 @@ public class Shell : MonoBehaviour, IClickable
         {
             Player.RemoveFromClickables(gameObject);
             shellSpawner.SpawnShellOnBlanket(shellType);
+            FindAnyObjectByType<JournalManager>().ShellFound(shellType);
             Destroy(gameObject);
         }
     }
