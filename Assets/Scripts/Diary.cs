@@ -9,7 +9,6 @@ public class Diary : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI page1;
     [SerializeField] TextMeshProUGUI page2;
-    [SerializeField] TextMeshProUGUI examplePage;
     [SerializeField] List<string> allEntries = new List<string>();
 
     List<string> paginatedStrings = new List<string>();
