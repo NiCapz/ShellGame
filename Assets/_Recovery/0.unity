@@ -3120,8 +3120,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1264127582}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -3, y: 0.00002670288}
   m_SizeDelta: {x: 35.4816, y: 2.4544}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4200,8 +4200,8 @@ Transform:
   m_GameObject: {fileID: 523128484}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.7, y: 4.32, z: 0}
-  m_LocalScale: {x: 3.192, y: 3.192, z: 3.192}
+  m_LocalPosition: {x: 7.5769, y: 4.1695, z: 0}
+  m_LocalScale: {x: 4.560091, y: 4.560091, z: 4.560091}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2120655259}
@@ -5035,7 +5035,7 @@ RectTransform:
   m_Father: {fileID: 1836090333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1.3000183, y: 0.00002193451}
   m_SizeDelta: {x: 10.7551, y: 3.7761}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5207,20 +5207,8 @@ MonoBehaviour:
     Personally I find the shape so pretty.
   - Periwinkle - This shell grows with its sea snail owner, and they have a lid that
     can be closed to protect them from predators, but to also survive out of water.
-  - 10 Lorem ipsum dolor sit amet consectetur adipiscing elit rutrum fusce cras velit
-    sociis, posuere sociosqu volutpat hac dignissim torquent morbi phasellus pellentesque
-    netus. Tristique quam porttitor iaculis magna neque quisque per eleifend erat,
-    tortor mattis montes lobortis mollis pretium ligula nulla, nec nostra lectus
-    aliquam vel semper curae habitasse. Quis interdum vivamus parturient integer
-    ridiculus praesent eleifend massa, tempus viverra tincidunt lobortis fringilla
-    primis nam, leo habitant natoque turpis porttitor dignissim etiam.
-  - 10 Lorem ipsum dolor sit amet consectetur adipiscing elit rutrum fusce cras velit
-    sociis, posuere sociosqu volutpat hac dignissim torquent morbi phasellus pellentesque
-    netus. Tristique quam porttitor iaculis magna neque quisque per eleifend erat,
-    tortor mattis montes lobortis mollis pretium ligula nulla, nec nostra lectus
-    aliquam vel semper curae habitasse. Quis interdum vivamus parturient integer
-    ridiculus praesent eleifend massa, tempus viverra tincidunt lobortis fringilla
-    primis nam, leo habitant natoque turpis porttitor dignissim etiam.
+  - Dear diary balal;alalsad
+  - Dear diary balal;alalsad
   nextPageButton: {fileID: 1894014589}
   previousPageButton: {fileID: 1217548768}
 --- !u!4 &728938543
@@ -5771,7 +5759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &847288458
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6638,8 +6626,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1503291048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -3, y: 0.00002670288}
   m_SizeDelta: {x: 35.4816, y: 2.4544}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8935,11 +8923,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dear Diary, today is June 21st.
-
-    I decided to go to the beach and
-    collect shells, like how Granny and I used to. I''m gonna try get all of her
-    favourite ones, and maybe see what else washes ashore.'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0113baa8ab9e0f8469b3fe48347fa39a, type: 2}
   m_sharedMaterial: {fileID: 1071146039287667002, guid: 0113baa8ab9e0f8469b3fe48347fa39a, type: 2}
@@ -9494,9 +9478,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1591601161}
-  - {fileID: 847288458}
   - {fileID: 2063480699}
+  - {fileID: 847288458}
+  - {fileID: 1591601161}
   m_Father: {fileID: 81698545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1664932809
@@ -10918,7 +10902,7 @@ RectTransform:
   m_Father: {fileID: 911573834}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1.3000183, y: 0.00002193451}
   m_SizeDelta: {x: 10.7551, y: 3.7761}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11052,7 +11036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2063480699
 RectTransform:
   m_ObjectHideFlags: 0

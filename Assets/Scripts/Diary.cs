@@ -33,10 +33,7 @@ public class Diary : MonoBehaviour
 
     void Start()
     {
-        NewEntry(0);
-        NewEntry(1);
-        NewEntry(2);
-        NewEntry(3);
+        NewEntry(10);
     }
 
     void DoPagination()
@@ -48,12 +45,13 @@ public class Diary : MonoBehaviour
         {
             sb.Append(entry);
             sb.AppendLine();
+            sb.AppendLine();
         }
         string rest = sb.ToString();
 
         while (rest.Length > 0)
         {
-            int nextPageLength = 470;
+            int nextPageLength = 400;
             nextPageLength = Math.Min(nextPageLength, rest.Length);
             string pageString = rest.Substring(0, nextPageLength);
             paginatedStrings.Add(pageString);
