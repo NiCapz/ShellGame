@@ -66,5 +66,6 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
+    "SheSellsSeaShells.slnx=======dotnet.defaultSolution": "SheSellsSeaShells.sln>>>>>>>Stashedchanges",
     "dotnet.defaultSolution": "SheSellsSeaShells.slnx"
 }
