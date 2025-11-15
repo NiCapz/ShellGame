@@ -43,7 +43,7 @@ public class Shell : MonoBehaviour, IClickable
 
     public void SetRandomType()
     {
-        int random = Random.Range(0, 3);
+        int random = Random.Range(0, 9);
         shellType = drawTable[random];
     }
 
