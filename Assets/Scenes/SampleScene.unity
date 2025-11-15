@@ -444,7 +444,7 @@ MonoBehaviour:
   - {fileID: -7294194651411085068, guid: aee76a5b39c8bec4782b010d9e87aa6b, type: 3}
   - {fileID: -8273085931569126364, guid: c0a1e92fb3b300b4981ccba8b5712890, type: 3}
   - {fileID: 5705469235110535566, guid: 2d9814aaebe1f58478a950e199c9ea47, type: 3}
-  - {fileID: 1310527875251572171, guid: dd135fd27117c7240ad2ef4cff47dc6c, type: 3}
+  - {fileID: 8155907462646050914, guid: e4cc967b4e12dd343be2041213f9ee8a, type: 3}
   - {fileID: -3514020835062027974, guid: ad89b01741a76c14b96d64da279ff102, type: 3}
   - {fileID: -539579915749326718, guid: d767953ef4319c442aeac29be43d6147, type: 3}
   - {fileID: 3042127274653301699, guid: a1487a394ea826b46a4b0eed58e59060, type: 3}
@@ -5330,8 +5330,6 @@ GameObject:
   m_Component:
   - component: {fileID: 848236515}
   - component: {fileID: 848236512}
-  - component: {fileID: 848236514}
-  - component: {fileID: 848236513}
   m_Layer: 0
   m_Name: JournalOutline
   m_TagString: Untagged
@@ -5397,76 +5395,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &848236513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848236511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9755db153a9da546854fc68e11ca25d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JournalButton
-  outline: {fileID: 0}
---- !u!60 &848236514
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848236511}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.71, y: 0.55}
-    newSize: {x: 0.67, y: 0.52}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.145, y: 0.26}
-      - {x: -0.035, y: 0.26}
-      - {x: -0.105, y: 0.25}
-      - {x: -0.33499998, y: 0.01}
-      - {x: -0.33499998, y: -0.07}
-      - {x: -0.13499999, y: -0.26}
-      - {x: -0.055, y: -0.26}
-      - {x: 0.24499999, y: -0.049999997}
-      - {x: 0.33499998, y: -0.01}
-      - {x: 0.33499998, y: 0.099999994}
-  m_UseDelaunayMesh: 0
 --- !u!4 &848236515
 Transform:
   m_ObjectHideFlags: 0
