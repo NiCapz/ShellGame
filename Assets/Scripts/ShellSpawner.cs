@@ -40,7 +40,6 @@ public class ShellSpawner : MonoBehaviour
         shells.Clear();
         int shellsToSpawn = Random.Range(2, 4);
 
-        Vector3 spawnPosition = new Vector3();
         for (int i = 0; i < shellsToSpawn; i++)
         {
             int spawnPointIndex;
@@ -54,7 +53,7 @@ public class ShellSpawner : MonoBehaviour
                     unavailableSpawnPoints.Add(spawnPointIndex);
                 }
             } while (!spawnPointFound);
-            spawnPosition = spawnPoints[spawnPointIndex].position;
+            Vector3 spawnPosition = spawnPoints[spawnPointIndex].position;
             spawnPosition.z = Camera.main.nearClipPlane + 1f;
 
             shells.Add(Instantiate(shellPrefab, spawnPosition, Quaternion.identity));
