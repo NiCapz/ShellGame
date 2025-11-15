@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     private bool atBeach = true;
     public Vector2 mouseposition;
     private string startWaveTrigger = "startWave";
-    //private string toggleBlanketTrigger = "toggleBlanket";
     private static List<GameObject> clickables = new List<GameObject>();
 
     public static void AddToClickables(GameObject clickable)
@@ -74,7 +73,6 @@ public class Player : MonoBehaviour
                 cameraAnimation.EaseDown();
             }
             atBeach = !atBeach;
-            //cameraAnimator.SetTrigger(toggleBlanketTrigger);
         }
     }
 }

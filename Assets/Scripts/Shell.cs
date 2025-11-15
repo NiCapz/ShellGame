@@ -1,18 +1,23 @@
-using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Shell : MonoBehaviour, IClickable
 {
     public enum ShellType
     {
-        Scallop = 0,
-        Cowrie = 1,
-        Murex = 2,
+        Scallop     = 0,
+        Murex       = 1,
+        Cowrie      = 2,
+        Conch       = 3,
+        Nautilus    = 4,
+        BandedWedge = 5,
+        Starfish    = 6,
+        Turret      = 7,
+        Periwinkle  = 8,
+        Pearl       = 9
     }
 
-    private static ShellType[] drawTable = { ShellType.Scallop, ShellType.Cowrie, ShellType.Murex };
+    private static ShellType[] drawTable = { ShellType.Scallop, ShellType.Murex, ShellType.Cowrie, ShellType.Conch,
+     ShellType.Nautilus, ShellType.BandedWedge, ShellType.Starfish, ShellType.Turret, ShellType.Periwinkle };
 
 
     [SerializeField] SpriteRenderer outline;
@@ -25,7 +30,6 @@ public class Shell : MonoBehaviour, IClickable
     void Awake()
     {
         assetProvider = FindAnyObjectByType<AssetProvider>();
-        Debug.Log(assetProvider.enabled);
         shellSpawner = FindAnyObjectByType<ShellSpawner>();
         SetRandomType();
         SetSprite();
@@ -40,14 +44,52 @@ public class Shell : MonoBehaviour, IClickable
 
     public void SetRandomType()
     {
-        int random = Random.Range(0, 3);
-        shellType = drawTable[random];
+        //int random = Random.Range(0, 9);
+        //shellType = drawTable[random];
+        
+        int random = Random.Range(0, 100);
+        ShellType type = ShellType.Periwinkle;
+        switch (random)
+        {
+            case < 16:
+                type = ShellType.Periwinkle;
+                break;
+            case < 32:
+                type = ShellType.Scallop;
+                break;
+            case < 48:
+                type = ShellType.Starfish;
+                break;
+            case < 60:
+                type = ShellType.Turret;
+                break;
+            case < 72:
+                type = ShellType.BandedWedge;
+                break;
+            case < 84:
+                type = ShellType.Cowrie;
+                break;
+            case < 89:
+                type = ShellType.Conch;
+                break;
+            case < 94:
+                type = ShellType.Murex;
+                break;
+            case < 99:
+                type = ShellType.Nautilus;
+                break;
+            case < 100:
+                type = ShellType.Pearl;
+                break;
+            
+        }
+        shellType = type;
+
     }
 
     public void SetSprite()
     {
         int spriteIndex = (int)shellType;
-        Debug.Log(assetProvider.enabled);
         Sprite sprite = assetProvider.shellSprites[spriteIndex];
         Sprite outlineSprite = assetProvider.shellSpritesOutline[spriteIndex];
         GetComponent<SpriteRenderer>().sprite = sprite;
@@ -74,6 +116,7 @@ public class Shell : MonoBehaviour, IClickable
         {
             Player.RemoveFromClickables(gameObject);
             shellSpawner.SpawnShellOnBlanket(shellType);
+            FindAnyObjectByType<JournalManager>().ShellFound(shellType);
             Destroy(gameObject);
         }
     }
