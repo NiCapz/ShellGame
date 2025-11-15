@@ -13,10 +13,13 @@ public class JournalManager : MonoBehaviour
 
     [SerializeField] private GameObject[] checkMarks;
     [SerializeField] private TextMeshProUGUI[] amountsGuis;
+
+    private Diary diary;
     private int[] amounts = new int[9];
 
     void Awake()
     {
+        diary = FindAnyObjectByType<Diary>();
         foreach (GameObject checkmark in checkMarks)
         {
             checkmark.SetActive(false);
@@ -43,7 +46,11 @@ public class JournalManager : MonoBehaviour
         int i = (int)type;
         Debug.Log($"shell found of type {type}, index {i}");
 
-        if (amounts[i] == 0) checkMarks[i].SetActive(true);
+        if (amounts[i] == 0)
+        {
+            checkMarks[i].SetActive(true);
+            diary.NewEntry((int) type);
+        }
 
         amounts[i]++;
         amountsGuis[i].SetText($"Amount collected: {amounts[i]}");

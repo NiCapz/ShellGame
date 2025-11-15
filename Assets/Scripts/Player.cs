@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Player : MonoBehaviour
 {
@@ -11,10 +12,14 @@ public class Player : MonoBehaviour
     [SerializeField] private Animator topWaveAnimator, bottomWaveAnimator;//, cameraAnimator;
     [SerializeField] private CameraAnimation cameraAnimation;
 
-    private bool atBeach = true;
     public Vector2 mouseposition;
     private string startWaveTrigger = "startWave";
-    private static List<GameObject> clickables = new List<GameObject>();
+    public static List<GameObject> clickables = new List<GameObject>();
+
+    void Start()
+    {
+        StartWave();
+    }
 
     public static void AddToClickables(GameObject clickable)
     {
@@ -36,7 +41,14 @@ public class Player : MonoBehaviour
             {
                 clickable.ClickOn();
             }
+            
         }
+    }
+
+    public void StartWave()
+    {
+        topWaveAnimator.SetTrigger(startWaveTrigger);
+        bottomWaveAnimator.SetTrigger(startWaveTrigger);
     }
 
     void Update()
@@ -53,7 +65,7 @@ public class Player : MonoBehaviour
             TryClick();
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        /*if (Input.GetKeyDown(KeyCode.W))
         {
             topWaveAnimator.SetTrigger(startWaveTrigger);
             bottomWaveAnimator.SetTrigger(startWaveTrigger);
@@ -68,11 +80,12 @@ public class Player : MonoBehaviour
             if (atBeach)
             {
                 cameraAnimation.EaseUp();
-            } else
+            }
+            else
             {
                 cameraAnimation.EaseDown();
             }
             atBeach = !atBeach;
-        }
+        }*/
     }
 }

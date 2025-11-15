@@ -7,7 +7,7 @@ public class ShellSpawner : MonoBehaviour
     [SerializeField] private float minDistance;
     Transform[] spawnPoints;
     List<int> unavailableSpawnPoints = new List<int>();
-    List<GameObject> shells = new List<GameObject>();
+    public static List<GameObject> shells = new List<GameObject>();
     Transform[] blanketSpawnPoints;
     HashSet<Shell.ShellType> foundShellTypes = new HashSet<Shell.ShellType>();
 

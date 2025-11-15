@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 63b6784df93057c448bb45f5a8c0823e
+guid: 838e08da25256574aa6659ba6fdac3c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5403228243072621665
-    second: handledark_0
+      213: 9131277319708675312
+    second: BorderArrow_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: handledark_0
+      name: BorderArrow_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2
-        width: 76
-        height: 6
+        x: 0
+        y: 0
+        width: 22
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f936c4b5a80e305b0800000000000000
-      internalID: -5403228243072621665
+      spriteID: 0fc01dab750d8be70800000000000000
+      internalID: 9131277319708675312
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      handledark_0: -5403228243072621665
+      BorderArrow_0: 9131277319708675312
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

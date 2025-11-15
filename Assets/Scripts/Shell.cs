@@ -4,16 +4,16 @@ public class Shell : MonoBehaviour, IClickable
 {
     public enum ShellType
     {
-        Scallop     = 0,
-        Murex       = 1,
-        Cowrie      = 2,
-        Conch       = 3,
-        Nautilus    = 4,
+        Scallop = 0,
+        Murex = 1,
+        Cowrie = 2,
+        Conch = 3,
+        Nautilus = 4,
         BandedWedge = 5,
-        Starfish    = 6,
-        Turret      = 7,
-        Periwinkle  = 8,
-        Pearl       = 9
+        Starfish = 6,
+        Turret = 7,
+        Periwinkle = 8,
+        Pearl = 9
     }
 
     private static ShellType[] drawTable = { ShellType.Scallop, ShellType.Murex, ShellType.Cowrie, ShellType.Conch,
@@ -46,7 +46,7 @@ public class Shell : MonoBehaviour, IClickable
     {
         //int random = Random.Range(0, 9);
         //shellType = drawTable[random];
-        
+
         int random = Random.Range(0, 100);
         ShellType type = ShellType.Periwinkle;
         switch (random)
@@ -81,10 +81,9 @@ public class Shell : MonoBehaviour, IClickable
             case < 100:
                 type = ShellType.Pearl;
                 break;
-            
+
         }
         shellType = type;
-
     }
 
     public void SetSprite()
@@ -117,6 +116,11 @@ public class Shell : MonoBehaviour, IClickable
             Player.RemoveFromClickables(gameObject);
             shellSpawner.SpawnShellOnBlanket(shellType);
             FindAnyObjectByType<JournalManager>().ShellFound(shellType);
+            ShellSpawner.shells.Remove(gameObject);
+            if (ShellSpawner.shells.Count <= 0)
+            {
+                FindAnyObjectByType<Player>().StartWave();
+            }
             Destroy(gameObject);
         }
     }
