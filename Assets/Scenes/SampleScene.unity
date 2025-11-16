@@ -460,6 +460,12 @@ MonoBehaviour:
   - {fileID: -764750251751365201, guid: 7c40923f680b0c74b91c4e735d1cae11, type: 3}
   - {fileID: -6528972601709993010, guid: 1f6c095aa65816249be29b487235ec7c, type: 3}
   - {fileID: 3414313798062901490, guid: 592f55f86414e76469cb92cf2a9099d1, type: 3}
+  arrowSprites:
+  - {fileID: -5621275025976656576, guid: 18254735c3a5d6548a4ebdc250456f4d, type: 3}
+  - {fileID: 3628293958972825212, guid: dd15c8e5e24d8da45b7c673101115afd, type: 3}
+  arrowOutlineSprites:
+  - {fileID: 3628293958972825212, guid: dd15c8e5e24d8da45b7c673101115afd, type: 3}
+  - {fileID: 8110820591614074214, guid: f42e3a2ed085ed8419fe2d4ebf2884bb, type: 3}
 --- !u!4 &65112942
 Transform:
   m_ObjectHideFlags: 0
@@ -4112,7 +4118,7 @@ Transform:
   m_GameObject: {fileID: 523128484}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.7, y: 4.32, z: 0}
+  m_LocalPosition: {x: 7.7, y: 3.93, z: 0}
   m_LocalScale: {x: 3.192, y: 3.192, z: 3.192}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8138,7 +8144,7 @@ SpriteRenderer:
   m_Size: {x: 0.22, y: 0.26}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1267461500
@@ -11367,7 +11373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &2109449645
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11455,7 +11461,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.18, y: 0.22}
+  m_Size: {x: 0.2, y: 0.21}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -11470,7 +11476,7 @@ Transform:
   m_GameObject: {fileID: 2109449644}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.7, y: 7.06, z: 0}
+  m_LocalPosition: {x: 7.7, y: 5.31, z: 0}
   m_LocalScale: {x: 3.192, y: 3.192, z: 3.192}
   m_ConstrainProportionsScale: 0
   m_Children:
