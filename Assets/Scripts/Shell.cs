@@ -16,8 +16,6 @@ public class Shell : MonoBehaviour, IClickable
         Pearl = 9
     }
 
-    private static ShellType[] drawTable = { ShellType.Scallop, ShellType.Murex, ShellType.Cowrie, ShellType.Conch,
-     ShellType.Nautilus, ShellType.BandedWedge, ShellType.Starfish, ShellType.Turret, ShellType.Periwinkle };
 
 
     [SerializeField] SpriteRenderer outline;
@@ -51,6 +49,7 @@ public class Shell : MonoBehaviour, IClickable
         ShellType type = ShellType.Periwinkle;
         switch (random)
         {
+            
             case < 16:
                 type = ShellType.Periwinkle;
                 break;
