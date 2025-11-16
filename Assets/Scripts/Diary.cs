@@ -21,8 +21,14 @@ public class Diary : MonoBehaviour
 
     public void NewEntry(int entryIndex)
     {
+        if (entryIndex < 0 || entryIndex >= allEntries.Count)
+        {
+            Debug.LogError($"NewEntry called with invalid index {entryIndex}. allEntries.Count = {allEntries.Count}");
+            return;
+        }
+        Debug.Log("new entry");
         entriesToShow.Add(allEntries[entryIndex]);
-        DoPagination();
+        //DoPagination();
     }
 
     void Awake()
@@ -36,29 +42,35 @@ public class Diary : MonoBehaviour
         NewEntry(10);
     }
 
-    void DoPagination()
+   public void DoPagination()
+{
+    Debug.Log($"DoPagination called. entriesToShow.Count = {entriesToShow.Count}");
+    
+    paginatedStrings.Clear();
+    StringBuilder sb = new StringBuilder();
+    
+    foreach (string entry in entriesToShow)
     {
-        paginatedStrings.Clear();
-
-        StringBuilder sb = new StringBuilder();
-        foreach (string entry in entriesToShow)
-        {
-            sb.Append(entry);
-            sb.AppendLine();
-            sb.AppendLine();
-        }
-        string rest = sb.ToString();
-
-        while (rest.Length > 0)
-        {
-            int nextPageLength = 400;
-            nextPageLength = Math.Min(nextPageLength, rest.Length);
-            string pageString = rest.Substring(0, nextPageLength);
-            paginatedStrings.Add(pageString);
-            rest = rest.Substring(pageString.Length);
-        }
-        UpdateVisiblePages(currentPageIndex);
+        sb.Append(entry);
+        sb.AppendLine();
+        sb.AppendLine();
     }
+    
+    string rest = sb.ToString();
+    Debug.Log($"Total character count to paginate: {rest.Length}");
+    
+    while (rest.Length > 0)
+    {
+        int nextPageLength = Math.Min(400, rest.Length);
+        string pageString = rest.Substring(0, nextPageLength);
+        paginatedStrings.Add(pageString);
+        rest = rest.Substring(nextPageLength);
+    }
+    
+    Debug.Log($"Created {paginatedStrings.Count} pages");
+    
+    UpdateVisiblePages(currentPageIndex);
+}
 
     public void NextPage()
     {

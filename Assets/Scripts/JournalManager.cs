@@ -15,7 +15,7 @@ public class JournalManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] amountsGuis;
 
     private Diary diary;
-    private int[] amounts = new int[9];
+    private int[] amounts = new int[10];
 
     void Awake()
     {
@@ -27,13 +27,13 @@ public class JournalManager : MonoBehaviour
         ToggleJournal();
     }
 
-    void Update()
+    /*void Update()
     {
         if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.B)) && allJournals.activeInHierarchy)
         {
             ToggleJournal();
         }
-    }
+    }*/
 
     public void ToggleJournal()
     {

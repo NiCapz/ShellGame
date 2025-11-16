@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class JournalButton : MonoBehaviour, IClickable
 {
-   
+
     JournalManager journalManager;
     [SerializeField] SpriteRenderer outline;
+    [SerializeField] Diary diary;
 
 
     void Awake()
@@ -17,10 +18,11 @@ public class JournalButton : MonoBehaviour, IClickable
     public void ClickOn()
     {
         journalManager.ToggleJournal();
+        diary.DoPagination();
         Debug.Log("clicked on journal");
     }
 
-      void OnMouseEnter()
+    void OnMouseEnter()
     {
         outline.enabled = true;
         Player.AddToClickables(gameObject);

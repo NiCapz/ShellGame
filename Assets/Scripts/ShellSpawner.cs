@@ -37,6 +37,7 @@ public class ShellSpawner : MonoBehaviour
 
     public void SpawnShells()
     {
+        unavailableSpawnPoints.Clear();
         shells.Clear();
         int shellsToSpawn = Random.Range(2, 4);
 
