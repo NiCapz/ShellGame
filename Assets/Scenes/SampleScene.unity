@@ -464,7 +464,7 @@ MonoBehaviour:
   - {fileID: -5621275025976656576, guid: 18254735c3a5d6548a4ebdc250456f4d, type: 3}
   - {fileID: 3628293958972825212, guid: dd15c8e5e24d8da45b7c673101115afd, type: 3}
   arrowOutlineSprites:
-  - {fileID: 3628293958972825212, guid: dd15c8e5e24d8da45b7c673101115afd, type: 3}
+  - {fileID: 1370417139275691875, guid: fa9f467135ead0748b5afad9c78960b5, type: 3}
   - {fileID: 8110820591614074214, guid: f42e3a2ed085ed8419fe2d4ebf2884bb, type: 3}
 --- !u!4 &65112942
 Transform:
